@@ -45,7 +45,7 @@ class RootController {
     @ApiResponse(responseCode = "302")
     @Get(value = "/help")
     HttpResponse<String> help() {
-        return HttpResponse.redirect(new URI("swagger-ui/index.html"))
+        return HttpResponse.redirect(new URI("/swagger-ui/index.html"))
     }
 
     @Tag(name = "Root Operations")
@@ -57,6 +57,6 @@ class RootController {
     )
     @Get(value = "/version", produces = MediaType.TEXT_PLAIN)
     String version() {
-        return "0-0-1"
+        return "0-0-2"
     }
 }
