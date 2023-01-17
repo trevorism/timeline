@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.tags.Tag
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-@Controller("/")
+@Controller("/api")
 class RootController {
 
     private static final Logger log = LoggerFactory.getLogger(RootController)
@@ -27,7 +27,7 @@ class RootController {
     @Get(produces = MediaType.TEXT_HTML)
     HttpResponse<List<String>> index() {
         log.info("Hit context root")
-        HttpResponse.ok(['<a href="/ping">/ping</a>', '<a href="/help">/help</a>', '<a href="/version">/version</a>'])
+        HttpResponse.ok(['<a href="/api/ping">/ping</a>', '<a href="/help">/help</a>', '<a href="/api/version">/version</a>'])
     }
 
     @Tag(name = "Root Operations")

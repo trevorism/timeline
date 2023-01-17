@@ -5,3 +5,5 @@ classes/
 *.iml
 out/
 secrets.properties
+node_modules
+dist
