@@ -45,7 +45,7 @@ class RootController {
     @ApiResponse(responseCode = "302")
     @Get(value = "/help")
     HttpResponse<String> help() {
-        return HttpResponse.redirect(new URI("/swagger-ui/index.html"))
+        return HttpResponse.redirect(new URI("../swagger-ui/index.html"))
     }
 
     @Tag(name = "Root Operations")
