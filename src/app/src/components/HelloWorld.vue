@@ -29,6 +29,12 @@ defineProps({
 </script>
 
 <template>
+  <va-navbar color="#111111" textColor="#BAFFC5">
+    <va-navbar-item class="navbar-item-slot">Trevorism Timeline</va-navbar-item>
+  </va-navbar>
+  <div class="pa-4">
+    Create your timeline here
+  </div>
   <h1>{{ msg }}</h1>
   <h1>{{ val }}</h1>
 
