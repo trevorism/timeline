@@ -124,6 +124,7 @@ task copyFrontEnd(type: Copy){
 
 jar.dependsOn("copyFrontEnd")
 test.dependsOn("copyFrontEnd")
+run.dependsOn("copyFrontEnd")
 buildLayers.dependsOn("copyFrontEnd")
 shadowJar.dependsOn("copyFrontEnd")
 compileTestGroovy.dependsOn("copyFrontEnd")

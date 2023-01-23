@@ -1,4 +1,5 @@
 <script setup>
+import WorkHistories from "./WorkHistories.vue";
 </script>
 
 <template>
@@ -8,7 +9,7 @@
     </va-navbar-item>
   </va-navbar>
 
-
+  <work-histories></work-histories>
 </template>
 
 <style scoped>
