@@ -17,6 +17,7 @@ class DateToPixelTimelineService implements TimelineService {
 
     public static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("M/d/yyyy")
     public static final DateTimeFormatter monthYearFormatter = DateTimeFormatter.ofPattern("MM/yyyy")
+    public static final String GAP = "GAP"
 
     @Override
     TimelineResponse generate(List<WorkHistoryItem> histories) {
@@ -49,7 +50,6 @@ class DateToPixelTimelineService implements TimelineService {
         response.items.each{
             int length = it.endPixel - it.beginPixel
             if(it.beginPixel == 0 || (length > KEY_DATE_THRESHOLD_PIXELS && it.beginPixel > 80)){
-
                 response.timelineDates.add(new TimelineDate(dateString: it.beginMonthYear, pixelLocation: it.beginPixel))
             }
         }
@@ -108,7 +108,7 @@ class DateToPixelTimelineService implements TimelineService {
             LocalDate endDate = getLocalDate(workHistoryItems[i - 1].endDate)
             LocalDate startDate = getLocalDate(workHistoryItems[i].startDate)
             if (daysBetween(startDate, endDate) > GAP_THRESHOLD_DAYS) {
-                itemsToAdd.add(new WorkHistoryItem(employer: "GAP", startDate: workHistoryItems[i - 1].endDate, endDate: workHistoryItems[i].startDate, color: "#FFFFFF"))
+                itemsToAdd.add(new WorkHistoryItem(employer: GAP, startDate: workHistoryItems[i - 1].endDate, endDate: workHistoryItems[i].startDate, color: "#FFFFFF"))
             }
         }
         workHistoryItems.addAll(itemsToAdd)
