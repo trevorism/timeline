@@ -17,7 +17,7 @@ export default {
       let obj = {"color": "#000000"}
       this.histories.push(obj)
     },
-    success(x){
+    success(x) {
       this.$emit("timeline", x.data)
     },
     removeMe(index) {
@@ -42,7 +42,13 @@ export default {
 
         <va-card-actions align="right">
           <va-button @click="addRow">Add Row</va-button>
-          <server-button wakeupBackendOnLoad color="success" endpoint="timeline" :requestBody="histories" :successCallback="success">Generate Timeline</server-button>
+          <server-button wakeupBackendOnLoad
+                         color="success"
+                         endpoint="timeline"
+                         :requestBody="histories"
+                         :successCallback="success">
+            Generate Timeline
+          </server-button>
         </va-card-actions>
       </va-card>
     </div>

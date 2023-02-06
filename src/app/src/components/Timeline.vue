@@ -1,9 +1,24 @@
 <script>
+
+import {Canvas} from "jsdom/lib/jsdom/utils";
+
 export default {
 
   data() {
     return {
-      index: 0
+      index: 0,
+      url: ''
+    }
+  },
+
+  methods: {
+    convert() {
+      let svg = this.$refs.timelineSvg
+      let preface = '<?xml version="1.0" standalone="no"?>\r\n';
+      let svgData = new XMLSerializer().serializeToString(svg)
+      let svgBlob = new Blob([preface,svgData], {type: "image/svg+xml;charset=utf-8"})
+      let svgUrl = URL.createObjectURL(svgBlob);
+      this.url = svgUrl
     }
   }
 
@@ -12,6 +27,8 @@ export default {
 </script>
 
 <script setup>
+
+import {VaSpacer} from "vuestic-ui";
 
 defineProps({
   loaded: Boolean,
@@ -26,8 +43,7 @@ defineProps({
       <div class="flex lg12">
         <va-card stripe stripe-color="primary" gradient>
           <va-card-title>Timeline</va-card-title>
-
-          <svg width="1400" height="400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="400" ref="timelineSvg">
             <rect v-for="item in timelineData.items" :x="65 + item.beginPixel" y="10"
                   :width="item.endPixel - item.beginPixel" height="40" :fill="item.color" stroke="grey"
                   stroke-width="1"/>
@@ -46,6 +62,10 @@ defineProps({
             </g>
           </svg>
           <va-button color="warning" @click="$emit('timelineHide')" class="va-text-warning">Hide</va-button>
+          &nbsp;&nbsp;
+          <a :href="url" target="_blank">
+            <va-button color="info" @click="convert" class="va-text-warning">Open in New Tab</va-button>
+          </a>
 
         </va-card>
       </div>
