@@ -1,16 +1,15 @@
 <script>
-
-import {Canvas} from "jsdom/lib/jsdom/utils";
+import { nextTick } from 'vue'
 
 export default {
 
   data() {
     return {
       index: 0,
+      imageMode: false,
       url: ''
     }
   },
-
   methods: {
     convert() {
       let svg = this.$refs.timelineSvg
@@ -19,6 +18,25 @@ export default {
       let svgBlob = new Blob([preface,svgData], {type: "image/svg+xml;charset=utf-8"})
       let svgUrl = URL.createObjectURL(svgBlob);
       this.url = svgUrl
+      this.imageMode = true
+    },
+    hide() {
+      this.$emit('timelineHide')
+      this.imageMode = false
+    },
+    canvas() {
+      const canvas = this.$refs.canvas
+      const ctx = canvas.getContext("2d");
+      const image = this.$refs.image
+      ctx.clearRect(0,0,1400,400)
+      ctx.drawImage(image, 0,0,1400,400)
+      image.style.display = "none"
+    },
+    download() {
+      const a = document.createElement('a');
+      a.href = this.$refs.canvas.toDataURL()
+      a.download = "timeline.png";
+      a.click();
     }
   }
 
@@ -39,7 +57,11 @@ defineProps({
 
 <template>
   <div v-if="loaded">
-    <div class="row">
+    <div class="row" v-if="imageMode">
+      <img ref="image" style="position: absolute; top: -5000px" width="1400" height="400" :src="url" @load="canvas">
+      <canvas ref="canvas" width="1400" height="400"> </canvas>
+    </div>
+    <div class="row" v-if="!imageMode">
       <div class="flex lg12">
         <va-card stripe stripe-color="primary" gradient>
           <va-card-title>Timeline</va-card-title>
@@ -61,14 +83,14 @@ defineProps({
               </g>
             </g>
           </svg>
-          <va-button color="warning" @click="$emit('timelineHide')" class="va-text-warning">Hide</va-button>
-          &nbsp;&nbsp;
-          <a :href="url" target="_blank">
-            <va-button color="info" @click="convert" class="va-text-warning">Open in New Tab</va-button>
-          </a>
-
         </va-card>
       </div>
+    </div>
+    <div class="row">
+      <va-spacer></va-spacer>
+      <va-button color="warning" @click="hide" class="va-text-warning">Hide</va-button> &nbsp;&nbsp;
+      <va-button v-if="!imageMode" color="info" @click="convert" class="va-text-warning">Convert To PNG</va-button> &nbsp;&nbsp;
+      <va-button v-if="imageMode" color="primary" @click="download" class="va-text-warning">Download Image</va-button>
     </div>
   </div>
 </template>
