@@ -24,7 +24,7 @@ buildscript {
 plugins {
     id("groovy")
     id("com.github.johnrengelman.shadow") version "7.1.2"
-    id("io.micronaut.application") version "3.7.0"
+    id("io.micronaut.application") version "3.7.8"
     id("com.github.node-gradle.node") version "3.5.1"
 }
 
@@ -48,7 +48,7 @@ dependencies {
     implementation("io.micronaut:micronaut-validation")
 
     implementation("jakarta.annotation:jakarta.annotation-api")
-    implementation 'io.projectreactor:reactor-core:3.5.4'
+    implementation 'io.projectreactor:reactor-core:3.5.5'
 
     implementation("io.swagger.core.v3:swagger-annotations")
     compileOnly("io.micronaut.openapi:micronaut-openapi"){
@@ -126,3 +126,4 @@ jar.dependsOn("copyFrontEnd")
 run.dependsOn("copyFrontEnd")
 buildLayers.dependsOn("copyFrontEnd")
 shadowJar.dependsOn("copyFrontEnd")
+compileTestGroovy.mustRunAfter('copyFrontEnd')
