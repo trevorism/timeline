@@ -1,13 +1,13 @@
 <script setup>
-import HeaderBar from './components/HeaderBar.vue'
+import MenuBar from '@trevorism/ui-header-bar'
 import Splash from "./components/Splash.vue";
 
 </script>
 
 <template>
   <div>
-    <header-bar/>
-    <splash/>
+    <menu-bar></menu-bar>
+    <splash></splash>
   </div>
 </template>
 
