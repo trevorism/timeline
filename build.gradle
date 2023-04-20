@@ -17,7 +17,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.4.5'
-        classpath 'com.trevorism:gradle-acceptance-plugin:2.2.0'
+        classpath 'com.trevorism:gradle-acceptance-plugin:2.3.1'
     }
 }
 
@@ -127,3 +127,4 @@ run.dependsOn("copyFrontEnd")
 buildLayers.dependsOn("copyFrontEnd")
 shadowJar.dependsOn("copyFrontEnd")
 compileTestGroovy.mustRunAfter('copyFrontEnd')
+compileAcceptanceGroovy.mustRunAfter('copyFrontEnd')
