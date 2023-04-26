@@ -5,9 +5,12 @@ on:
     inputs:
       TEST_TYPE:
         required: false
-        type: string
+        type: choice
         default: acceptance
-        description: Either 'unit' or 'acceptance'
+        options:
+          - unit
+          - acceptance
+          - cypress
 
 jobs:
   call-build:
@@ -21,3 +24,7 @@ jobs:
     uses: trevorism/actions-workflows/.github/workflows/accept.yml@master
     with:
       JDK_VERSION: 17
+
+  call-cypress:
+    if: ${{inputs.TEST_TYPE == 'cypress'}}
+    uses: trevorism/actions-workflows/.github/workflows/cypress.yml@master
