@@ -5,12 +5,9 @@ on:
     inputs:
       TEST_TYPE:
         required: false
-        type: choice
+        type: string
         default: acceptance
-        options:
-          - unit
-          - acceptance
-          - cypress
+        description: Either 'unit' or 'acceptance' or 'cypress'
 
 permissions: write-all
 
