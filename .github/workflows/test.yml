@@ -12,6 +12,8 @@ on:
           - acceptance
           - cypress
 
+permissions: write-all
+
 jobs:
   call-build:
     if: ${{inputs.TEST_TYPE == 'unit'}}
