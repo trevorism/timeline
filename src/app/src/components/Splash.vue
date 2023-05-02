@@ -36,5 +36,6 @@ import Timeline from "./Timeline.vue";
 <style scoped>
 .va-navbar {
   --va-navbar-height: 56px;
+  
 }
 </style>
