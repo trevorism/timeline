@@ -11,6 +11,6 @@ import Splash from "./components/Splash.vue";
   </div>
 </template>
 
-<style scoped>
+<style>
 
 </style>

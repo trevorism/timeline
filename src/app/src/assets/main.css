@@ -1,0 +1,13 @@
+.tism-menuLinkItem {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.va-dropdown__content{
+    padding: 15px;
+}
+
+.va-navbar__left {
+    padding-top: 4px;
+    padding-left: 15px;
+}

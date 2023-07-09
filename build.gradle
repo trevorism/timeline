@@ -23,9 +23,9 @@ buildscript {
 
 plugins {
     id("groovy")
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
     id("io.micronaut.application") version "3.7.8"
-    id("com.github.node-gradle.node") version "3.5.1"
+    id("com.github.node-gradle.node") version "4.0.0"
 }
 
 apply plugin: 'com.google.cloud.tools.appengine'
@@ -84,7 +84,7 @@ appengine {
     stage.artifact = "${buildDir}/libs/${project.name}-all.jar"
     deploy {
         projectId = "trevorism-draw"
-        version = "0-1-0"
+        version = "0-2-0"
     }
 }
 

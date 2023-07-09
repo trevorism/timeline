@@ -21,7 +21,7 @@ import Timeline from "./Timeline.vue";
 </script>
 
 <template>
-  <va-navbar class="flex " center color="#bad2c7" textColor="#000000">
+  <va-navbar color="#bad2c7" textColor="#000000">
     <va-navbar-item class="navbar-item-slot">
         <h2>Trevorism Timeline</h2>
     </va-navbar-item>
@@ -33,8 +33,16 @@ import Timeline from "./Timeline.vue";
 
 </template>
 
-<style scoped>
+<style>
 .va-navbar {
-  --va-navbar-height: 56px;
+  --va-navbar-height: 30px;
+  --va-navbar-padding-x: 0rem;
+  --va-navbar-padding-y: 0rem;
+  --va-navbar-item-margin-side: 30px;
+  --va-navbar-item-padding-x: 0.5rem;
 }
+.indent {
+  margin-left: 30px;
+}
+
 </style>
