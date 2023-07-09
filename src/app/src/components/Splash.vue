@@ -40,9 +40,6 @@ import Timeline from "./Timeline.vue";
   --va-navbar-padding-y: 0rem;
   --va-navbar-item-margin-side: 30px;
   --va-navbar-item-padding-x: 0.5rem;
+  --va-navbar-height: 56px;
 }
-.indent {
-  margin-left: 30px;
-}
-
 </style>
