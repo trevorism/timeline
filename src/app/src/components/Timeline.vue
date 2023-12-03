@@ -96,7 +96,5 @@ defineProps({
 </template>
 
 <style scoped>
-.white-color {
-  background-color: white;
-}
+
 </style>

@@ -23,7 +23,7 @@ import Timeline from "./Timeline.vue";
 <template>
   <va-navbar color="#bad2c7" textColor="#000000">
     <va-navbar-item class="navbar-item-slot">
-        <h2>Trevorism Timeline</h2>
+        <h2 class="text-xl font-bold">Trevorism Timeline</h2>
     </va-navbar-item>
   </va-navbar>
 
@@ -34,12 +34,5 @@ import Timeline from "./Timeline.vue";
 </template>
 
 <style>
-.va-navbar {
-  --va-navbar-height: 30px;
-  --va-navbar-padding-x: 0rem;
-  --va-navbar-padding-y: 0rem;
-  --va-navbar-item-margin-side: 30px;
-  --va-navbar-item-padding-x: 0.5rem;
-  --va-navbar-height: 56px;
-}
+
 </style>

@@ -31,7 +31,7 @@ export default {
   <div class="row">
     <div class="flex lg12">
       <va-card stripe stripe-color="primary" gradient>
-        <va-card-title>Work History</va-card-title>
+        <va-card-title>Timeline Items</va-card-title>
         <va-card-content v-for="(history, index) in histories">
           <work-history-row @remove="removeMe(index)"
                             v-model:employer="history.employer"

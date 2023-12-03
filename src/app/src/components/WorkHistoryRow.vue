@@ -38,11 +38,11 @@ export default {
 
   <div class="row">
     <div class="flex">
-      <span class="flex md1"> Employer: </span> <span class="flex md1"> <va-input :model-value="employer" @update:model-value="$emit('update:employer', $event)"/> </span>
-      <span class="flex md1"> Start Date: </span> <span class="flex md1"> <va-date-input :model-value="startDate" @update:model-value="emitStartDate" manual-input mode="single"/> </span>
-      <span class="flex md1"> End Date: </span> <span class="flex md1"> <va-date-input :model-value="endDate" @update:model-value="emitEndDate" manual-input mode="single"/> </span>
-      <span class="flex md1"> Color: </span> <span class="flex md1">  <va-color-input :model-value="color" @input="$emit('update:color', $event.target.value)"/>  </span>
-      <span class="flex md1"> <va-button @click="$emit('remove')" color="danger">Delete</va-button></span>
+      <span class="flex md1 mx-2 mt-1"> Employer: </span> <span class="flex md1"> <va-input :model-value="employer" @update:model-value="$emit('update:employer', $event)"/> </span>
+      <span class="flex md1 mx-2 mt-1"> Start Date: </span> <span class="flex md1"> <va-date-input :model-value="startDate" @update:model-value="emitStartDate" manual-input mode="single"/> </span>
+      <span class="flex md1 mx-2 mt-1"> End Date: </span> <span class="flex md1"> <va-date-input :model-value="endDate" @update:model-value="emitEndDate" manual-input mode="single"/> </span>
+      <span class="flex md1 mx-2 mt-1"> Color: </span> <span class="flex md1">  <va-color-input :model-value="color" @input="$emit('update:color', $event.target.value)"/>  </span>
+      <span class="flex md1 mx-2"> <va-button @click="$emit('remove')" color="danger">Delete</va-button></span>
     </div>
   </div>
 </template>
