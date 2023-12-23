@@ -1,7 +1,6 @@
 <script setup>
 import MenuBar from '@trevorism/ui-header-bar'
-import Splash from "./components/Splash.vue";
-
+import Splash from './components/Splash.vue'
 </script>
 
 <template>
@@ -11,6 +10,4 @@ import Splash from "./components/Splash.vue";
   </div>
 </template>
 
-<style>
-
-</style>
+<style></style>
