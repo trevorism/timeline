@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "format": "prettier --write src/",
     "test": "vitest",
-    "test:e2e": "cypress run"
+    "test:e2e": "cypress run && node sendEvent.js || node sendEvent.js"
   },
   "dependencies": {
     "@vuestic/tailwind": "^0.1.5",
@@ -30,6 +30,7 @@
     "autoprefixer": "^10.4.19",
     "axios": "^1.7.2",
     "cypress": "^13.10.0",
+    "cypress-json-results": "^1.5.0",
     "eslint": "^9.4.0",
     "eslint-plugin-vue": "^9.26.0",
     "jsdom": "^24.1.0",

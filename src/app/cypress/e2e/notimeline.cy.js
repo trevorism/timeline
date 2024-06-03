@@ -5,6 +5,5 @@ describe('clicking the generate timeline button first', () => {
 
         expect(cy.contains("Hide").should('exist'))
         expect(cy.contains("Convert To PNG").should('exist'))
-
     })
 })
