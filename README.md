@@ -6,7 +6,7 @@
 
 App to generate career timeline PNGs and put it on your resume. 
 
-Current version: 0.4.0
+Current version: 0.5.0
 
 Deployed to [Trevorism Timeline](https://timeline.draw.trevorism.com/)
 
