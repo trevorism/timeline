@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "format": "prettier --write src/",
     "test": "vitest",
-    "test:e2e": "cypress run && node sendEvent.js || node sendEvent.js"
+    "test:e2e": "cypress run --env trevorismTestEvent=enabled"
   },
   "dependencies": {
     "@vuestic/tailwind": "^0.1.5",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.3",
+    "@trevorism/cypress-test-result-events": "^1.0.0",
     "@trevorism/ui-header-bar": "^3.6.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-prettier": "^9.0.0",
@@ -30,7 +31,6 @@
     "autoprefixer": "^10.4.19",
     "axios": "^1.7.2",
     "cypress": "^13.10.0",
-    "cypress-json-results": "^1.5.0",
     "eslint": "^9.4.0",
     "eslint-plugin-vue": "^9.26.0",
     "jsdom": "^24.1.0",

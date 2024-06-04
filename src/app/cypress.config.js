@@ -1,15 +1,11 @@
 import { defineConfig } from "cypress";
-import registerCypressJsonResults from "cypress-json-results";
-
-let allResults = {};
+import registerTrevorismEventSender from "@trevorism/cypress-test-result-events";
 
 export default defineConfig({
 
   e2e: {
     setupNodeEvents(on, config) {
-      registerCypressJsonResults({
-        on, filename: 'results.json'
-      });
+      registerTrevorismEventSender({on, config}, 'timeline');
     }
   },
 
