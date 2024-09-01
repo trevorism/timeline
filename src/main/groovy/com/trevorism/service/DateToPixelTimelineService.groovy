@@ -16,6 +16,7 @@ class DateToPixelTimelineService implements TimelineService {
     public static final int KEY_DATE_THRESHOLD_PIXELS = 200
 
     public static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("M/d/yyyy")
+    public static final DateTimeFormatter isoDateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
     public static final DateTimeFormatter monthYearFormatter = DateTimeFormatter.ofPattern("MM/yyyy")
     public static final String GAP = "GAP"
 
@@ -99,7 +100,11 @@ class DateToPixelTimelineService implements TimelineService {
     }
 
     LocalDate getLocalDate(String date) {
-        LocalDate.parse(date, dateFormatter)
+        try{
+            return LocalDate.parse(date, dateFormatter)
+        } catch (Exception e){
+            return LocalDate.parse(date, isoDateFormatter)
+        }
     }
 
     List<WorkHistoryItem> fillInGaps(List<WorkHistoryItem> workHistoryItems) {
