@@ -1,4 +1,4 @@
-runtime: java17
+runtime: java25
 service: timeline
 entrypoint: java -jar timeline-all.jar
 handlers:
