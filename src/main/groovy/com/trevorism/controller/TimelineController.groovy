@@ -23,6 +23,7 @@ class TimelineController {
     @Operation(summary = "Validates inputs and generates a timeline")
     @Post(value = "/", produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
     TimelineResponse generate(@Body List<WorkHistoryItem> items) {
+        log.info("Generating timeline for ${items.size()} items")
         timelineService.generate(items)
     }
 }

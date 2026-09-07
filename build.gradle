@@ -17,7 +17,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.8.7'
-        classpath 'com.trevorism:gradle-acceptance-plugin:3.0.0'
+        classpath 'com.trevorism:gradle-acceptance-plugin:3.0.2'
+        classpath 'com.trevorism:gradle-trevorism-versioning-plugin:1.0.0'
     }
 }
 
@@ -25,12 +26,13 @@ plugins {
     id("groovy")
     id("com.gradleup.shadow") version "9.6.0"
     id("io.micronaut.application") version "5.0.2"
-    id("com.github.node-gradle.node") version "7.0.2"
+    id("com.github.node-gradle.node") version "7.1.0"
     id("jacoco")
 }
 
 apply plugin: 'com.google.cloud.tools.appengine'
 apply plugin: "com.trevorism.gradle.acceptance"
+apply plugin: "com.trevorism.gradle.versioning"
 
 group = "com.trevorism"
 
@@ -56,6 +58,7 @@ dependencies {
     compileOnly("io.micronaut.openapi:micronaut-openapi"){
         exclude module:"slf4j-nop"
     }
+    implementation "com.trevorism:micronaut-utility-beans:2.1.1"
     implementation 'com.trevorism:micronaut-ui-auth:1.1.0'
 
     testImplementation 'com.trevorism:test-result-events:0.3.0'
@@ -85,7 +88,6 @@ appengine {
     stage.artifact = layout.buildDirectory.file("libs/${project.name}-all.jar")
     deploy {
         projectId = "trevorism-draw"
-        version = "0-8-0"
         stopPreviousVersion = true
         promote = true
     }
