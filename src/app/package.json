@@ -15,6 +15,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "@trevorism/ui-auth": "^1.2.0",
+    "@trevorism/ui-header-bar": "^6.0.0",
     "vue": "^3.5.40",
     "vue-router": "^5.2.0",
     "vue3-click-away": "^1.2.4",
@@ -23,7 +25,6 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.16.1",
     "@trevorism/cypress-test-result-events": "^1.0.0",
-    "@trevorism/ui-header-bar": "^5.2.1",
     "@vitejs/plugin-vue": "^6.0.8",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.4.11",

@@ -56,6 +56,7 @@ dependencies {
     compileOnly("io.micronaut.openapi:micronaut-openapi"){
         exclude module:"slf4j-nop"
     }
+    implementation 'com.trevorism:micronaut-ui-auth:1.1.0'
 
     testImplementation 'com.trevorism:test-result-events:0.3.0'
     acceptanceImplementation 'io.cucumber:cucumber-groovy:6.10.4'
@@ -84,7 +85,7 @@ appengine {
     stage.artifact = layout.buildDirectory.file("libs/${project.name}-all.jar")
     deploy {
         projectId = "trevorism-draw"
-        version = "0-7-0"
+        version = "0-8-0"
         stopPreviousVersion = true
         promote = true
     }
